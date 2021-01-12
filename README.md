@@ -1,6 +1,6 @@
 # Title
 
-Simple (or clever and funny?) description
+Chatbot
 
 ## Table of Contents
 
@@ -12,14 +12,14 @@ Simple (or clever and funny?) description
 
 ## Background
 
-This is why this application exists.
+You can chat if you're ever bored!
 
 ## Install
 
-These are the steps to setup your local environment to run this application.
+Requires python
 
 ## Usage
 
-These are the steps to use the application or interact with it.
+
 
 ### Any optional sections
