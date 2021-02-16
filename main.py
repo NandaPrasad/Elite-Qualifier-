@@ -1,4 +1,6 @@
 # import random
+import requests
+print(requests.get("https://google.com").text)
 
 print("Hi! What's your name?")
 name = input()
