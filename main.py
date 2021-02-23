@@ -1,6 +1,6 @@
 # import random
-import requests
-print(requests.get("https://google.com").text)
+# import requests
+# print(requests.get("https://google.com").text)
 
 quit_action = 'q'
 
