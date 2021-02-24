@@ -1,4 +1,25 @@
 # import random
+import spacy
+import requests
+from bs4 import BeautifulSoup
+from collections import Counter
+
+nlp = spacy.load("en_core_web_sm")
+response = requests.get("http://lite.cnn.com/enjh")
+soup = BeautifulSoup(response.text, "html.parser")
+
+# https://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text
+[s.extract() for s in soup(['style', 'script', '[document]', 'head', 'title'])]
+text = soup.getText()
+doc = nlp(text)
+
+names = []
+for ent in doc.ents:
+    if ent.label_ == "PERSON":
+        names.append(ent.lemma_)
+
+print("These people are in the headlines today")
+print(Counter(names).most_common(10))
 
 quit_action = 'q'
 
@@ -28,7 +49,7 @@ def chat_Books():
   favoriteBooks = input("What's your favoite book?")
   print(favoriteBooks + " " + "is a great choice!")
   print("What other books do you like?")
-  name = input()
+  # name = input()
   print("Excellent choice!")
 
 def chat_Music():    
@@ -41,7 +62,7 @@ def chat_Music():
   print("You have good taste in music!")
 
 def chat_Future():
-  dreams = input("What do you want to do in the future?")
+  chat_Future = input("What do you want to do in the future?")
   print("Cool!")
 
   # else:
